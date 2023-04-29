@@ -4,7 +4,7 @@ export default function LandingPage(){
 
     return(
         <>
-            <Group position="center">ciao</Group>
+            <Group position="center" pt={200}></Group>
         </>
     )
 }
