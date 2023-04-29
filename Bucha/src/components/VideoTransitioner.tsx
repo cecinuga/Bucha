@@ -28,8 +28,18 @@ export default function VideoTransitioner(props: VideoTransitionerProps){
     const scattoContAniRef = useSpringRef()
     const scatto1Ref = useSpringRef()
     const scatto2Ref = useSpringRef()
+    const scatto3Ref = useSpringRef()
+    const scatto4Ref = useSpringRef()
+    const scatto5Ref = useSpringRef()
+    const scatto6Ref = useSpringRef()
+    const scatto7Ref = useSpringRef()
     const scattoCont1Ref = useSpringRef()
     const scattoCont2Ref = useSpringRef()
+    const scattoCont3Ref = useSpringRef()
+    const scattoCont4Ref = useSpringRef()
+    const scattoCont5Ref = useSpringRef()
+    const scattoCont6Ref = useSpringRef()
+    const scattoCont7Ref = useSpringRef()
 
     const mobile = useMediaQuery("(max-width: 500px)")
 
@@ -127,62 +137,7 @@ export default function VideoTransitioner(props: VideoTransitionerProps){
             display:"none",
         }
     })
-
-    const scattoContAni = useSpring({
-        ref: scattoContAniRef,
-        from: {
-            display:"none"
-        },
-        to: {
-            display:"block",
-        }
-    })
-    const imgScatto1 = useSpring({
-        ref: scatto1Ref,
-        from: {
-            width: "35%",
-        },
-        to: {
-            width:"40%",
-        },
-        config: {
-
-        }
-    })
-    const imgScatto2 = useSpring({
-        ref: scatto2Ref,
-        from: {
-            width: "35%",
-        },
-        to: {
-            width:"40%",
-        },
-        config: {
-
-        }
-    })
-
-    const scattoCont1Ani = useSpring({
-        ref: scattoCont1Ref,
-        from: {
-            display:"block"
-        },
-        to: {
-            display:"none",
-        }
-    })
-    const scattoCont2Ani = useSpring({
-        ref: scattoCont2Ref,
-        from: {
-            display:"block"
-        },
-        to: {
-            display:"none",
-        }
-    })
-
-
-    useChain([videoRef, imgRef1, imgRef2, imgRef3, imgRef4, imgRef5, imgRef6, imgRef7, contAniRef, scattoContAniRef, scatto2Ref, scattoCont2Ref, scatto1Ref, scattoCont1Ref], [1,1.1,1.6,1.8,2.1,2.2,2.3,2.4,2.8,2.8,2.9,3,3.1,3.2], 2300)
+    useChain([videoRef, imgRef1, imgRef2, imgRef3, imgRef4, imgRef5, imgRef6, imgRef7, contAniRef, scattoContAniRef, ], [1,1.1,1.3,1.5,1.7,1.9,2.1,2.3,2.5,2.7,2.9,3.1], 2300)
 
     return(
             <>
@@ -214,15 +169,6 @@ export default function VideoTransitioner(props: VideoTransitionerProps){
                         <img width={mobile?"80%":"35%"} src={foto7} style={{position:"absolute", left:mobile?"10%":"unset", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #2f0406"}}/>
                     </animated.div>
                 </animated.div>
-                <animated.div style={{width: "55vw",textAlign:"center",marginTop: "5rem", ...scattoContAni}}>
-                    <animated.div style={scattoCont1Ani}>
-                        <animated.img src={foto1} style={{position:"absolute",...imgScatto1}} />
-                    </animated.div>
-                    <animated.div style={scattoCont2Ani}>
-                        <animated.img src={foto2} style={{position:"absolute",...imgScatto2}} />
-                    </animated.div>
-                </animated.div>
-
             </>
     )
         
