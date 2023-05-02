@@ -1,18 +1,26 @@
 import './App.css'
-import VideoTransitioner from './components/VideoTransitioner'
-import blood from './assets/blood.mp4'
-import useMediaQuery from '@mui/material/useMediaQuery';
 import Sfondo from './components/Sfondo';
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
+import VideoTransitioner from './components/VideoTransitioner';
+import VideoPlayer from './components/VideoPlayer';
+import blood from "/src/assets/blood.mp4"
+import { Group } from '@mantine/core';
 
 function App() {
-  const mobile = useMediaQuery("(max-width: 500px)")
+  const [isLoading, setIsLoading] = useState<boolean>(true)
+
 
   return (
     <>
-      <Suspense fallback={<VideoTransitioner video={blood} width={mobile?'100%':'56%'} height='100%' />}>
-        <Sfondo />
-      </Suspense>
+      {isLoading?<VideoTransitioner setIsLoading={(e:boolean)=>setIsLoading(e)}/>:
+        <Suspense fallback={
+          <Group position="center">
+            <VideoPlayer video={blood} width={"50%"} height={'100%'}/>
+          </Group>
+        }>
+          <Sfondo/>
+        </Suspense>
+      }
     </>
   )
 }

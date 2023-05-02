@@ -3,6 +3,12 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  assetsInclude: ["**/*.glb", "**/*.hdr", "**/*.scss"],
   plugins: [react()],
+  assetsInclude: ["**/*.glb", "**/*.hdr", "**/*.scss"],
+  resolve: {
+    alias: [
+      { find: '@assets', replacement: '/src/assets' },
+      { find: '@components', replacement: '/src/components' },
+    ],
+  },
 })

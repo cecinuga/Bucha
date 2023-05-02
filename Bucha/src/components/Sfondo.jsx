@@ -1,0 +1,22 @@
+import { Canvas } from "@react-three/fiber";
+import { Environment, Html, OrbitControls } from "@react-three/drei";
+import LandingPage from './LandingPage'
+import sfondo from "../assets/sfondohdr.hdr"
+
+export default function Sfondo(){
+    return(
+        <>
+            <Canvas style={{width:"100vw", height:"100vh", margin: 0, padding: 0, position:"relative", zIndex:0}}>
+                <OrbitControls />
+                <Environment 
+                    background
+                    blur={0.0}
+                    files={sfondo}
+                />
+                <Html position={[-15,0,0]} style={{position:"relative"}}>
+                    <LandingPage />
+                </Html>
+            </Canvas>
+        </>
+    )
+}
