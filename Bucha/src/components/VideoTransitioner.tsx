@@ -25,7 +25,6 @@ export default function VideoTransitioner(props: VideoTransitionerProps){
     const imgRef6 = useSpringRef()
     const imgRef7 = useSpringRef()
     const contAniRef = useSpringRef()
-    const scattoContAniRef = useSpringRef()
 
     const mobile = useMediaQuery("(max-width: 500px)")
 
@@ -123,22 +122,21 @@ export default function VideoTransitioner(props: VideoTransitionerProps){
             display:"none",
         }
     })
-    useChain([videoRef, imgRef1, imgRef2, imgRef3, imgRef4, imgRef5, imgRef6, imgRef7, contAniRef, scattoContAniRef,], [1,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2,2.1], 2000)
+    useChain([videoRef, imgRef1, imgRef2, imgRef3, imgRef4, imgRef5, imgRef6, imgRef7, contAniRef], [1,1.2,1.4,1.6,1.8,2,2.2,2.4,2.6,2.8,3], 1000)
 
     return(
             <>
-                <animated.div style={{width: "100%", textAlign: "center", position:"absolute", left:0, top:"18%", zIndex: 2, marginTop: "1rem", ...videoAni}}>
+                <animated.div style={{width: "100%", textAlign: "center", position:"absolute", left:0, top:"0%", zIndex: 2, marginTop: "1rem", ...videoAni}}>
                     <video width={props.width} className={props.className} height={props.height} style={{border:0}} autoPlay muted preload="true">
                         <source src={props.video} type="video/mp4"></source>
                     </video>
                 </animated.div>
-                <animated.div style={{width:"100wv", height:"100vh", backgroundColor:"white", position:"absolute", zIndex:1}}></animated.div>
                 <animated.div style={{textAlign:"center",position:"relative", zIndex:2, right: mobile?"53%":"67%",...contAni}}>
                     <animated.div style={{width:"100vw",height:"100vh",textAlign: "center",position:"absolute",backgroundColor:"white",...imgAni1}}>
-                        <img width={mobile?"80%":"35%"} src={foto1} style={{position:"absolute", left:mobile?"10%":"unset", marginTop: "11rem"}}/>
+                        <img width={mobile?"80%":"35%"} src={foto1} style={{position:"absolute", left:mobile?"10%":"unset", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #52060b"}}/>
                     </animated.div>
                     <animated.div style={{width:"100vw",height:"100vh",textAlign: "center",position:"absolute",backgroundColor:"white",...imgAni2}}>
-                        <img width={mobile?"80%":"35%"} src={foto2} style={{position:"absolute", left:mobile?"10%":"unset", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #67060d"}}/>
+                        <img width={mobile?"80%":"35%"} src={foto2} style={{position:"absolute", left:mobile?"10%":"unset", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #52060b"}}/>
                     </animated.div>
                     <animated.div style={{width:"100vw",height:"100vh",textAlign: "center",position:"absolute",backgroundColor:"white",...imgAni3}}>
                         <img width={mobile?"80%":"35%"} src={foto3} style={{position:"absolute", left:mobile?"10%":"unset", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #52060b"}}/>
