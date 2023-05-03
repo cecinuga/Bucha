@@ -1,5 +1,6 @@
 import { Button } from "@mantine/core";
 import { ReactElement } from "react";
+import { Link } from "react-router-dom";
 
 type Button3DProps = {
     variant: string;
@@ -11,8 +12,10 @@ type Button3DProps = {
 
 export default function Button3D(props: Button3DProps){
     return(
-        <Button<'a'> href={props.href} variant={props.variant} gradient={props.gradient} className="border-3d" style={{...props.style,padding:0, }}>
-            {props.children}
-        </Button>
+        <Link to={props.href}>
+            <Button variant={props.variant} gradient={props.gradient} className="border-3d" style={{...props.style,padding:0, }}>
+                {props.children}
+            </Button>
+        </Link>
     )
 }

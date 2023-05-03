@@ -1,26 +1,21 @@
 import './App.css'
-import Sfondo from './components/Sfondo';
-import { Suspense, useState } from 'react';
-import VideoTransitioner from './components/VideoTransitioner';
-import VideoPlayer from './components/VideoPlayer';
-import blood from "/src/assets/blood.mp4"
-import LandingPage from './components/LandingPage';
+import ArtistiPage from './components/ArtistiPage';
+import HomePage from './components/HomePage'
+import {
+  Route, Routes,
+} from "react-router-dom";
+import OperaPage from './components/OperaPage';
+import { useState } from 'react';
 
 function App() {
-  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const isLoading = useState<boolean>(true)
 
   return (
-    <>
-      <VideoPlayer style={{position:"absolute", zIndex:-1, left:"50%", top:"50%", transform:"translateX(-50%) translateY(-65%)"}} video={blood} width={"50%"} height={'100%'}/>
-      {isLoading?<VideoTransitioner setIsLoading={(e:boolean)=>setIsLoading(e)}/>:
-        <>
-          <Suspense fallback={null}>
-            <Sfondo/>
-          </Suspense>
-          <LandingPage />
-        </>
-      }
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage isLoading={isLoading} />} />
+      <Route path="/l-opera" element={<OperaPage />} />
+      <Route path="/gli-artisti" element={<ArtistiPage />} />
+    </Routes>
   )
 }
 
