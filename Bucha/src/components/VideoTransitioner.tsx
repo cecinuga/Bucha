@@ -107,11 +107,11 @@ export default function VideoTransitioner(props: VideoTransitionerProps){
             display:"none",
         }
     })
-    useChain([/*videoRef, */imgRef1, imgRef2, imgRef3, imgRef4, imgRef5, imgRef6, imgRef7, contAniRef], [/*1,*/0.2,0.4,0.6,0.8,1,1.2,1.4,1.6,1.8,2], 2500)
+    useChain([/*videoRef, */imgRef1, imgRef2, imgRef3, imgRef4, imgRef5, imgRef6, imgRef7, contAniRef], [/*1,*/0.2,0.4,0.6,0.8,1,1.2,1.4,1.6,1.8,2], 500)
     useEffect(()=>{
         setTimeout(()=>{
             props.setIsLoading(false)
-        }, 6000)
+        }, 8000)
     })
 
 
@@ -124,22 +124,22 @@ export default function VideoTransitioner(props: VideoTransitionerProps){
                 </animated.div>*/}
                 <animated.div style={{textAlign:"center",position:"relative", zIndex:2, ...contAni}}>
                     <animated.div style={{width:"100vw",height:"100vh",textAlign: "center",position:"absolute",backgroundColor:"white",...imgAni1}}>
-                        <img width={mobile?"80%":"35%"} src={foto1} style={{position:"absolute", left:mobile?"10%":"35%", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #52060b"}}/>
+                        <img width={mobile?"90%":"35%"} src={foto1} style={{position:"absolute", left:mobile?"10%":"35%", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #52060b"}}/>
                     </animated.div>
                     <animated.div style={{width:"100vw",height:"100vh",textAlign: "center",position:"absolute",backgroundColor:"white",...imgAni2}}>
-                        <img width={mobile?"80%":"35%"} src={foto2} style={{position:"absolute", left:mobile?"10%":"35%", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #52060b"}}/>
+                        <img width={mobile?"90%":"35%"} src={foto2} style={{position:"absolute", left:mobile?"10%":"35%", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #52060b"}}/>
                     </animated.div>
                     <animated.div style={{width:"100vw",height:"100vh",textAlign: "center",position:"absolute",backgroundColor:"white",...imgAni3}}>
-                        <img width={mobile?"80%":"35%"} src={foto3} style={{position:"absolute", left:mobile?"10%":"35%", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #52060b"}}/>
+                        <img width={mobile?"90%":"35%"} src={foto3} style={{position:"absolute", left:mobile?"10%":"35%", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #52060b"}}/>
                     </animated.div>
                     <animated.div style={{width:"100vw",height:"100vh",textAlign: "center",position:"absolute",backgroundColor:"white",...imgAni4}}>
-                        <img width={mobile?"80%":"35%"} src={foto4} style={{position:"absolute", left:mobile?"10%":"35%", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #370407"}}/>
+                        <img width={mobile?"90%":"35%"} src={foto4} style={{position:"absolute", left:mobile?"10%":"35%", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #370407"}}/>
                     </animated.div>
                     <animated.div style={{width:"100vw",height:"100vh",textAlign: "center",position:"absolute",backgroundColor:"white",...imgAni5}}>
-                        <img width={mobile?"80%":"35%"} src={foto5} style={{position:"absolute", left:mobile?"10%":"35%", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #2f0406"}}/>
+                        <img width={mobile?"90%":"35%"} src={foto5} style={{position:"absolute", left:mobile?"10%":"35%", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #2f0406"}}/>
                     </animated.div>
                     <animated.div style={{width:"100vw",height:"100vh",textAlign: "center",position:"absolute",backgroundColor:"white",...imgAni6}}>
-                        <img width={mobile?"80%":"35%"} src={foto6} style={{position:"absolute", left:mobile?"10%":"35%", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #2f0406"}}/>
+                        <img width={mobile?"90%":"35%"} src={foto6} style={{position:"absolute", left:mobile?"10%":"35%", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #2f0406"}}/>
                     </animated.div>
                     <animated.div style={{width:"100vw",height:"100vh",textAlign: "center",position:"absolute",backgroundColor:"white",...imgAni7}}>
                         <img width={mobile?"80%":"35%"} src={foto7} style={{position:"absolute", left:mobile?"10%":"35%", marginTop: "11rem",boxShadow: "0px 0px 100px 25px #2f0406"}}/>

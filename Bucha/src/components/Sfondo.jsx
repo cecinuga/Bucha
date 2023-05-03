@@ -13,9 +13,6 @@ export default function Sfondo(){
                     blur={0.0}
                     files={sfondo}
                 />
-                <Html position={[-15,0,0]} style={{position:"relative"}}>
-                    <LandingPage />
-                </Html>
             </Canvas>
         </>
     )
