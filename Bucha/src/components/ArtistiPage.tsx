@@ -7,7 +7,7 @@ import katarinascultura2 from "../assets/katarinascultura2.jpg"
 
 export default function ArtistiPage(){
     return(
-        <Group position="center" pt={50} pb={0} style={{background: "linear-gradient(180deg, rgba(187,61,61,1) 20%, rgba(82,9,25,1) 90%", height:"100vh"}}>
+        <Group position="center" style={{height:"100vh"}}>
             <SchedaPersonaggio img={katarina} width={"80%"} title={<>
                 <Title className="font-third" fw={200} order={1} style={{fontSize:"4rem"}} c="white">Katarina V</Title>
                 <Title className="font-primary" fw={200} order={1} variant={"gradient"} gradient={{ from: "white", to: "#fe0707" }} style={{ borderBottom: "2px solid white" }}>Cosi l'Uomo ha fatto all'altro Uomo</Title>

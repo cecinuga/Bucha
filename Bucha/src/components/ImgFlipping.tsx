@@ -2,6 +2,7 @@ import { Button, Text } from "@mantine/core";
 import { ReactNode, useEffect, useState } from "react";
 import { animated, useSpring } from "react-spring";
 import { CarouselFoto } from "./CarouselFoto";
+import useMediaQuery from "@mui/material/useMediaQuery/useMediaQuery";
 
 type ImgFlippingProps = {
     img: string;
@@ -17,7 +18,7 @@ type ImgFlippingProps = {
 
 export default function ImgFlipping(props: ImgFlippingProps){
     const [openedModal,setOpened] = useState(false)
-
+    const md = useMediaQuery("(max-width: 1600px)")
     const [showDesc, setShowDesc] = useState<boolean>(false);
         
     const [aniBg, apiBg] = useSpring(()=>({
@@ -105,7 +106,7 @@ export default function ImgFlipping(props: ImgFlippingProps){
     return(
         <div>
             <div style={{position:"relative"}}>
-                <div style={{background:"url("+props.img+")",backgroundSize:"cover",position:"relative", width:"28rem", height:"50rem"}}>
+                <div style={{background:"url("+props.img+")",backgroundSize:"cover",position:"relative", width:"28rem", height:md?"40rem":"50rem"}}>
                     <animated.div style={{...aniBtn,position:"absolute", bottom:0, width:"100%",height:"4rem"}} onMouseEnter={hoverBtn} onMouseLeave={triggerBtn}>
                         <Button variant="gradient" gradient={{from:"black", to:"rgb(82,9,25)"}} className="font-primary" fw={200} style={{fontSize:"2rem",letterSpacing:"1rem",whiteSpace: "nowrap", position:"absolute", width:"100%", height:"100%"}} onClick={triggerAni}>Apri Scheda</Button>
                     </animated.div>

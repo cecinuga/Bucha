@@ -21,6 +21,7 @@ type SchedaPersonaggio = {
 
 export default function SchedaPersonaggio(props: SchedaPersonaggio){
     const sm = useMediaQuery('(max-width: 1090px)')
+    const md = useMediaQuery('(max-width: 1600px)')
 
     const renderImg = (children: ReactElement) => {
         return (
@@ -39,7 +40,7 @@ export default function SchedaPersonaggio(props: SchedaPersonaggio){
     }
     const renderDesc = () => {
         return (
-            <div style={{paddingBottom:"8rem", width:"40rem"}}>
+            <div style={{paddingBottom:md?"0rem":"8rem", width:"40rem"}}>
                 {props.title}
                 <Title className="font-primary" fw={200} pt={20} order={3} c={"white"}>{props.ruolo}{props.ruoloIcon}</Title>
                 <div>
