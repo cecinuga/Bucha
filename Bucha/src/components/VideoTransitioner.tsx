@@ -107,7 +107,7 @@ export default function VideoTransitioner(props: VideoTransitionerProps){
             display:"none",
         }
     })
-    useChain([/*videoRef, */imgRef1, imgRef2, imgRef3, imgRef4, imgRef5, imgRef6, imgRef7, contAniRef], [/*1,*/0.2,0.4,0.6,0.8,1,1.2,1.4,1.6,1.8,2], 500)
+    useChain([/*videoRef, */imgRef1, imgRef2, imgRef3, imgRef4, imgRef5, imgRef6, imgRef7, contAniRef], [/*1,*/0.2,0.4,0.6,0.8,1,1.2,1.4,1.6,1.8,2], 3000)
     useEffect(()=>{
         setTimeout(()=>{
             props.setIsLoading(false)

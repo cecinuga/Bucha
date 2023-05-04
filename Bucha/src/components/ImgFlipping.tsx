@@ -1,6 +1,7 @@
-import { Button } from "@mantine/core";
-import { ReactNode, useState } from "react";
+import { Button, Text } from "@mantine/core";
+import { ReactNode, useEffect, useState } from "react";
 import { animated, useSpring } from "react-spring";
+import { CarouselFoto } from "./CarouselFoto";
 
 type ImgFlippingProps = {
     img: string;
@@ -9,47 +10,38 @@ type ImgFlippingProps = {
     className?: string;
     children?: ReactNode;
     light?: string;
-    imgCircle: string;
     imgProfile: string;
     citazione: string;
+    data: string[]
 }
 
 export default function ImgFlipping(props: ImgFlippingProps){
+    const [openedModal,setOpened] = useState(false)
+
     const [showDesc, setShowDesc] = useState<boolean>(false);
         
     const [aniBg, apiBg] = useSpring(()=>({
         from: {
             backgroundColor:"transparent",
+            display:"none",
             width:"0",
             height:"0"
-        }
-    }))
-
-    const [aniChildren, apiChildren] = useSpring(()=>({
-        from: {
-            y:"-100",
         }
     }))
 
     const triggerAni = () => {
         apiBg.start({
             to: {
+                display:"block",
                 backgroundColor:"#D5DDBC",
-                width:"70%",
-                height:"90%",   
+                width:"95%",
+                height:"95%",   
             },
             config: {
             
             },
         })
-        apiChildren.start({
-            to: {
-                y:"-1000"
-            },
-            config: {
-                
-            }
-        })
+        setOpened(true)
         setShowDesc(true);
     }
 
@@ -58,20 +50,14 @@ export default function ImgFlipping(props: ImgFlippingProps){
             to: {
                 backgroundColor:"transparent",
                 width:"0",
-                height:"0"
+                height:"0",
+                display:"none",
             },
             config: {
                 
             },
         })
-        apiChildren.start({
-            to: {
-                y: "0",
-            },
-            config: {
-                
-            }
-        })
+        setOpened(false)
         setShowDesc(false);
     }
 
@@ -111,27 +97,31 @@ export default function ImgFlipping(props: ImgFlippingProps){
             },
         })
     }
+
+    useEffect(()=>{
+        console.log(openedModal)
+    }, [openedModal])
+
     return(
         <div>
-            <div>
+            <div style={{position:"relative"}}>
                 <div style={{background:"url("+props.img+")",backgroundSize:"cover",position:"relative", width:"28rem", height:"50rem"}}>
-                    <animated.div style={{...aniBtn,position:"absolute"}} onMouseEnter={hoverBtn} onMouseLeave={triggerBtn}>
-                        <Button style={{whiteSpace: "nowrap"}} onClick={triggerAni}>Click Me!</Button>
+                    <animated.div style={{...aniBtn,position:"absolute", bottom:0, width:"100%",height:"4rem"}} onMouseEnter={hoverBtn} onMouseLeave={triggerBtn}>
+                        <Button variant="gradient" gradient={{from:"black", to:"rgb(82,9,25)"}} className="font-primary" fw={200} style={{fontSize:"2rem",letterSpacing:"1rem",whiteSpace: "nowrap", position:"absolute", width:"100%", height:"100%"}} onClick={triggerAni}>Apri Scheda</Button>
                     </animated.div>
                 </div>
-                <animated.div onClick={triggerAniReverse} style={aniBg}>
-                    <img src={props.imgCircle}></img>
-                    <div>
-                        <img src={props.imgProfile}></img>
-                        {showDesc&&
+                <animated.div style={{...aniBg, position:"absolute", top:"50%",left:"50%",transform:"translate(-50%, -50%)"}}>
+                    <CarouselFoto hasOpened={openedModal} height="" imageHeight={"100%"} slide={1} slideSize="100%" width="100%" data={props.data.map((item)=>({image: item}))} />
+                    <div onClick={triggerAniReverse} style={{height:"100%"}}>
                         <div>
-                            <div>{props.citazione}</div>
-                        </div>}
-                    </div>
-                    <div >
-                        <animated.div style={aniChildren}>
+                            {showDesc&&
+                            <div> 
+                                <Text align="center" fz={30} className="font-third">" {props.citazione} "</Text>
+                            </div>}
+                        </div>
+                        <div>
                             {props.children}
-                        </animated.div>
+                        </div>
                     </div>
                 </animated.div>
             </div>
