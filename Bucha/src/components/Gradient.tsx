@@ -1,4 +1,3 @@
-import { useMediaQuery } from "@mantine/hooks";
 import { MouseEvent } from "react";
 import { useMouseMove } from "../lib/lib";
 
@@ -10,9 +9,6 @@ type GradientProps = {
 
 export default function Gradient(props: GradientProps){
     const {x, y, handleMouseMove} = useMouseMove()
-    const xs = useMediaQuery("(max-width: 500px)")
-    const md = useMediaQuery("(max-width: 1400px)")
-
     const update = (e: MouseEvent) => {
         console.log(e, x, y)
         document.getElementById("mouse-cursor-gradient-tracking")?.style.setProperty('--x', x + 'px');

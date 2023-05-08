@@ -11,14 +11,13 @@ import { Link } from "react-router-dom";
 import ParallaxWallpaper from "./ParallaxWallpaper";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import DividerWaves from "./DividerWaves";
-import Gradient from "./Gradient";
 
 export default function ArtistiPage(){
     const xs = useMediaQuery("(max-width:500px)")
 
     return(
         <>
-            <Parallax enabled pages={8} style={{top: "0", left: "0", background: "linear-gradient(180deg, rgba(187,61,61,1) 20%, rgba(82,9,25,1) 90%)"}}>
+            <Parallax enabled pages={7} style={{top: "0", left: "0", background: "linear-gradient(180deg, rgba(187,61,61,1) 20%, rgba(82,9,25,1) 90%)"}}>
                 <ParallaxWallpaper />
                 <ParallaxLayer factor={1} offset={xs?0.55:1} speed={1}>
                     <Group position="center">
@@ -118,7 +117,7 @@ export default function ArtistiPage(){
                         </SchedaPersonaggio>
                     </Group>
                 </ParallaxLayer>
-                <ParallaxLayer factor={0.3} offset={6} speed={0.5}>
+                <ParallaxLayer factor={1} offset={5.9} speed={0.5}>
                     <Group style={{position:"absolute", bottom:0, width:"100%"}}>
                         <DividerWaves width="100%" />
                     </Group>
