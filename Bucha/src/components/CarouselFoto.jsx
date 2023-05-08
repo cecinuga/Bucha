@@ -3,6 +3,7 @@ import { createStyles, Paper, Progress, rem } from '@mantine/core';
 import { useCallback, useEffect, useState, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from "embla-carousel-autoplay"
+import useMediaQuery from '@mui/material/useMediaQuery/useMediaQuery';
 
 const useStyles = createStyles(() => ({
   card: {
@@ -47,6 +48,7 @@ export function CarouselFoto({data, height, width, slide, slideSize, imageHeight
   const [scrollProgress, setScrollProgress] = useState(0);
   const [openedModal,] = useState(hasOpened)
   const [embla, setEmbla] = useState(null);
+  const xs = useMediaQuery("(max-width:500px)")
 
   const handleScroll = useCallback(() => {
     if (!embla) return;
@@ -88,7 +90,7 @@ export function CarouselFoto({data, height, width, slide, slideSize, imageHeight
             <Progress
                 value={scrollProgress}
                 styles={{ bar: { transitionDuration: '0ms', backgroundColor:"red" }, root: { maxWidth: rem(320) } }}
-                style={{ bottom:"3rem"}}
+                style={{ bottom:xs?"13rem":"3rem"}}
                 size="sm"
                 mt="xl"
                 mx="auto"

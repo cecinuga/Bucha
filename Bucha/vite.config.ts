@@ -11,4 +11,13 @@ export default defineConfig({
       { find: '@components', replacement: '/src/components' },
     ],
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "./src/components/divider-waves.scss";
+        `
+      }
+    }
+  }
 })
