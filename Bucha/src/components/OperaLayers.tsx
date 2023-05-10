@@ -9,12 +9,13 @@ type OperaLayerProps = {
     offset: number;
     factor: number;
     speed: number;
+    bg: string;
 }
 
 export default function OperaLayer(props: OperaLayerProps){
     return(
         <>
-            <ParallaxLayer offset={props.offset} factor={props.factor} speed={props.speed} style={{background:"#771024"}}>
+            <ParallaxLayer offset={props.offset} factor={props.factor} speed={props.speed} style={{background:props.bg}}>
                 <Group position="center">
                     {props.title}
                 </Group>
