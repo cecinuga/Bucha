@@ -17,7 +17,7 @@ export default function ArtistiPage(){
 
     return(
         <>
-            <Parallax enabled pages={7} style={{top: "0", left: "0", background: "linear-gradient(180deg, rgba(187,61,61,1) 20%, rgba(82,9,25,1) 90%)"}}>
+            <Parallax enabled pages={6} style={{top: "0", left: "0", background: "linear-gradient(180deg, rgba(187,61,61,1) 20%, rgba(82,9,25,1) 90%)"}}>
                 <ParallaxWallpaper />
                 <ParallaxLayer factor={1} offset={xs?0.55:1} speed={1}>
                     <Group position="center">
@@ -94,12 +94,12 @@ export default function ArtistiPage(){
                         </SchedaPersonaggio>
                     </Group>
                 </ParallaxLayer>
-                <ParallaxLayer factor={0.3} offset={4.9} speed={0.5}>
+                <ParallaxLayer factor={0.3} offset={3.9} speed={0.5}>
                     <Group position="center">
                         <DividerWaves width="100%" />
                     </Group>
                 </ParallaxLayer>
-                <ParallaxLayer factor={xs?2.5:1} style={{paddingTop:"3.5%"}} offset={5} speed={1.8}>
+                <ParallaxLayer factor={xs?2.5:1} style={{paddingTop:"3.5%"}} offset={4} speed={1.8}>
                     <Group position="center" >
                         <SchedaPersonaggio img={vincenzonobile} width={"80%"} title={<>
                             <Title className="font-third" fw={200} order={1} style={{fontSize:"4rem"}} c="white">Vincenzo Nobile</Title>
@@ -123,7 +123,7 @@ export default function ArtistiPage(){
                         </SchedaPersonaggio>
                     </Group>
                 </ParallaxLayer>
-                <ParallaxLayer factor={1} offset={5.9} speed={0.5}>
+                <ParallaxLayer factor={1} offset={4.9} speed={0.5}>
                     <Group style={{position:"absolute", bottom:0, width:"100%"}}>
                         <DividerWaves width="100%" />
                     </Group>
