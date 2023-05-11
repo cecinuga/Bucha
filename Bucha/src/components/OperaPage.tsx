@@ -31,7 +31,7 @@ export default function OperaPage(){
                             Torna alla Home
                         </Title>
                     </Link>
-                    <div style={{width:"0.2rem", height:"2.8rem", backgroundColor:"black"}}></div>
+                    {!xs?<div style={{width:"0.2rem", height:"2.8rem", backgroundColor:"black"}}></div>:<></>}
                     <Link to="/gli-artisti" style={{textDecoration: "none"}}>
                         <Title variant="gradient" gradient={{from:"#3d3c3c", to:"#460411"}} className="font-primary">
                             Vai dagli Artisti
@@ -41,7 +41,7 @@ export default function OperaPage(){
             </ParallaxLayer>
 
             <OperaLayerSection
-                factor={0.95}
+                factor={xs?1.7:0.95}
                 offset={2} 
                 speed={0}
                 title="Lorem Ipsum Dolor Sit Amet"
@@ -56,15 +56,15 @@ export default function OperaPage(){
             />
             <OperaLayer
                 bg="#c21839" 
-                offset={2.90} factor={0.5} speed={0.5}
-                title={<Title fz={50} fw={200} c="white" mb={30} className="font-third">Lorem Ipsum Dolor Sit Amet</Title>}
-                desc={<Text c="white" align="center" fz={25} style={{width:"60%",lineHeight: "2.3rem", letterSpacing: "0.2rem"}} className="font-four" >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu mi ex. Quisque et turpis bibendum, condimentum mi ac, aliquam justo.<br /> Etiam quis magna risus. Aliquam vitae risus laoreet purus malesuada pellentesque a id massa.<br /> 
+                offset={xs?3.45:2.90} factor={0.5} speed={0.5}
+                title={<Title fz={xs?40:50} fw={200} align={xs?"center":"unset"} c="white" mb={xs?5:30} className="font-third">Lorem Ipsum Dolor Sit Amet</Title>}
+                desc={<Text c="white" align="center" fz={xs?15:25} style={{textAlign:"justify",width:xs?"100%":"60%",lineHeight: "2.3rem", letterSpacing: "0.2rem"}} className="font-four" >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu mi ex. Quisque et turpis bibendum, condimentum mi ac, aliquam justo.<br /> Etiam quis magna risus. Aliquam vitae risus laoreet purus malesuada<br /> 
                       </Text>}
             />
             <OperaLayerSection
                 factor={0.95}
-                offset={3} 
+                offset={xs?4:3} 
                 speed={0.6}
                 title="Lorem Ipsum Dolor Sit Amet"
             >
@@ -72,27 +72,27 @@ export default function OperaPage(){
             </OperaLayerSection>
             <OperaLayer
                 bg="#771024" 
-                offset={3.90} factor={0.5} speed={1}
-                title={<Title fz={50} fw={200} c="white" mb={30} className="font-third">Lorem Ipsum Dolor Sit Amet</Title>}
-                desc={<Text c="white" align="center" fz={25} style={{width:"60%",lineHeight: "2.3rem", letterSpacing: "0.2rem"}} className="font-four" >
-                    Vestibulum justo massa, tempor non efficitur facilisis, aliquam aliquet est. Vivamus gravida auctor est sed pulvinar.<br /> Sed pharetra justo lobortis ante venenatis commodo.<br /> Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.                      </Text>}
+                offset={xs?4.45:3.90} factor={0.5} speed={1}
+                title={<Title fz={xs?40:50} fw={200} align={xs?"center":"unset"} c="white" mb={xs?5:30} className="font-third">Lorem Ipsum Dolor Sit Amet</Title>}
+                desc={<Text c="white" align="center" fz={xs?15:25} style={{textAlign:"justify",width:xs?"100%":"60%",lineHeight: "2.3rem", letterSpacing: "0.2rem"}} className="font-four" >
+                    Vestibulum justo massa, tempor non efficitur facilisis, aliquam aliquet est. Vivamus gravida auctor est sed pulvinar.<br /> Sed pharetra justo lobortis ante venenatis commodo.<br /> Class aptent taciti sociosqu ad litora torquent per conubia nostra                     </Text>}
             />
             <OperaLayerSection
-                factor={0.95}
-                offset={4} 
+                factor={xs?1.7:0.95}
+                offset={xs?5:4} 
                 speed={0.6}
                 title="Lorem Ipsum Dolor Sit Amet"
             >
-                <div style={{width:"50%"}}>
+                <div className="awesome-navigatore" style={{position:"relative",width:xs?"100%":"80%"}}>
                     <CarouselFoto hasOpened data={[{image: img1},{image: img2},{image: img3},{image: img4}]} slide={1} slideSize={"100%"} width={"100%"} height={"100%"} imageHeight={"100%"} />
                 </div>
             </OperaLayerSection>
             <OperaLayer
                 bg="#420a15" 
-                offset={4.90} factor={0.5} speed={1}
-                title={<Title fz={50} fw={200} c="white" mb={30} className="font-third">Lorem Ipsum Dolor Sit Amet</Title>}
-                desc={<Text c="white" align="center" fz={25} style={{width:"60%",lineHeight: "2.3rem", letterSpacing: "0.2rem"}} className="font-four" >
-                    Vestibulum justo massa, tempor non efficitur facilisis, aliquam aliquet est. Vivamus gravida auctor est sed pulvinar.<br /> Sed pharetra justo lobortis ante venenatis commodo.<br /> Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.                      </Text>}
+                offset={xs?5.45:4.90} factor={0.5} speed={1}
+                title={<Title fz={xs?40:50} fw={200} align={xs?"center":"unset"} c="white" mb={xs?5:30} className="font-third">Lorem Ipsum Dolor Sit Amet</Title>}
+                desc={<Text c="white" align="center" fz={xs?15:25} style={{textAlign:"justify",width:xs?"100%":"60%",lineHeight: "2.3rem", letterSpacing: "0.2rem"}} className="font-four" >
+                    Vestibulum justo massa, tempor non efficitur facilisis, aliquam aliquet est. Vivamus gravida auctor est sed pulvinar.<br /> Sed pharetra justo lobortis ante venenatis commodo.<br /> Class aptent taciti sociosqu ad litora torquent per conubia nostra                     </Text>}
             />
         </Parallax>
     )

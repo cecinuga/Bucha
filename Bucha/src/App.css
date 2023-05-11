@@ -4,3 +4,9 @@
 .font-four{ font-family: 'Fjalla One', sans-serif; }
 .border-3d{border: 2px solid #9e1118; border-bottom: 6px solid #9e1118;}
 .border-3d:hover{border: 2px solid #9e1118;}
+
+.awesome-navigatore .mantine-Carousel-control svg{
+    color: red!important;
+    width:5rem!important;
+    height:5rem!important;
+}
