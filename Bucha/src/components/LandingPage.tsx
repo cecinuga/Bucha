@@ -1,6 +1,6 @@
-import {Group, Title, Text} from "@mantine/core"
-import Button3D from "./Button3D"
+import {Group, Title, Text, Button} from "@mantine/core"
 import useMediaQuery from "@mui/material/useMediaQuery/useMediaQuery"
+import { Link } from "react-router-dom"
 
 export default function LandingPage(){
     const xs = useMediaQuery("(max-width: 500px)")
@@ -14,12 +14,12 @@ export default function LandingPage(){
             </Title>
         </Group>
         <Group position="center" display={"inline-block"} style={{whiteSpace:"nowrap",position:"absolute", bottom:"10%",left:"50%",transform:"translateX(-50%)", zIndex: 1, touchAction: "none", }} pt={15}>
-            <Button3D href="/l-opera" variant="gradient" gradient={{from:"black", to:"white"}} style={{marginRight:"0.5rem",display:"inline-block",width:xs?"7rem":"15rem", height:xs?"7rem":"15rem"}}>
+            <Link to="/l-opera"><Button className="gray-hover" variant="gradient" gradient={{from:"black", to:"black"}} style={{marginRight:"0.5rem",display:"inline-block",width:xs?"7rem":"15rem", height:xs?"7rem":"5rem"}}>
                 <Title order={xs?5:3} className="font-primary" fw={200}>L'Opera</Title>
-            </Button3D>
-            <Button3D href="/gli-artisti" variant="gradient" gradient={{from:"white", to:"red.9"}}  style={{marginLeft:"0.5rem",display:"inline-block",width:xs?"7rem":"15rem", height:xs?"7rem":"15rem"}}>
+            </Button></Link>
+            <Link to="/gli-artisti"><Button className="gray-hover" variant="gradient" gradient={{from:"black", to:"black"}}  style={{marginLeft:"0.5rem",display:"inline-block",width:xs?"7rem":"15rem", height:xs?"7rem":"5rem"}}>
                 <Title order={xs?5:3} className="font-primary" fw={200}>Gli Artisti</Title>
-            </Button3D>
+            </Button></Link>
         </Group>
        </>
     )

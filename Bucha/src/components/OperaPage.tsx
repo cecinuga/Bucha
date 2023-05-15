@@ -13,13 +13,14 @@ import img1 from "../assets/DSC03456.jpg"
 import img2 from "../assets/DSC03440.jpg"
 import img3 from "../assets/DSC03443.jpg"
 import img4 from "../assets/DSC03445.jpg"
+import FotoAScatto from "./FotoAScatto";
 
 export default function OperaPage(){
     const xs = useMediaQuery("(max-width: 500px)")
     const theme = useMantineTheme()
 
     return(
-        <Parallax pages={7} style={{top: "0", left: "0", background: "radial-gradient(circle, white 0%, black 100%)"}}>
+        <Parallax pages={7} style={{top: "0", left: "0", background: "linear-gradient(45deg, white 0%, black 100%)"}}>
             <ParallaxFotos />
             <ParallaxLayer offset={1.5} speed={0}>
                 <Group position="center"> 
@@ -40,15 +41,15 @@ export default function OperaPage(){
                 </Group>
             </ParallaxLayer>
 
-            <ParallaxLayer offset={2}>
-
+            <ParallaxLayer offset={2} factor={1}>
+                <FotoAScatto foto={[img1,img2,img3,img4]} timeout={500} />
             </ParallaxLayer>
 
 
             <OperaLayerSection
                 factor={xs?1.7:0.95}
                 offset={3} 
-                speed={0}
+                speed={1}
                 title="Lorem Ipsum Dolor Sit Amet"
                 bgs={["#f5234d","#c21839", "#771024","#420a15"]}
                 icons={[<IconCampfire size={64} color={theme.colors.red[8]}/>,<Icon360 size={64} color={theme.colors.red[8]}/>,<IconActivityHeartbeat size={64} color={theme.colors.red[8]}/>,<IconLifebuoy size={64} color={theme.colors.red[8]}/>]}
@@ -61,7 +62,7 @@ export default function OperaPage(){
             />
             <OperaLayer
                 bg="#c21839" 
-                offset={xs?3.45:3.90} factor={0.5} speed={0.5}
+                offset={xs?3.45:3.90} factor={0.5} speed={1.5}
                 title={<Title fz={xs?40:50} fw={200} align={xs?"center":"unset"} c="white" mb={xs?5:30} className="font-third">Lorem Ipsum Dolor Sit Amet</Title>}
                 desc={<Text c="white" align="center" fz={xs?15:25} style={{textAlign:"justify",width:xs?"100%":"60%",lineHeight: "2.3rem", letterSpacing: "0.2rem"}} className="font-four" >
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu mi ex. Quisque et turpis bibendum, condimentum mi ac, aliquam justo.<br /> Etiam quis magna risus. Aliquam vitae risus laoreet purus malesuada<br /> 

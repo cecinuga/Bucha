@@ -1,32 +1,29 @@
-import { SpringRef, animated, useSpring } from "@react-spring/web"
+import { useEffect, useState } from "react"
 
-type FotoAScattoProps = {
-    data: string[],
-    ref: SpringRef,
+type WallpaperProps = {
+    foto: string[]
+    timeout: number
 }
 
-export default function FotoAScatto(props: FotoAScattoProps){
+export default function FotoAScatto(props: WallpaperProps){
+    const [turno, setTurno] = useState(Array.from(props.foto, (_, i) => i==0?"block":"none"))
 
-    const imgAnis = props.data.map(() => {
-        const ani = useSpring({
-            from: {
-                width: "50%"
-            },
-            to: {
-                width:"55%"
-            },
-            config: {
-
+    useEffect(()=>{
+        setTimeout(()=>{
+            if(turno[turno.length-1]=="block"){
+                setTurno(Array.from(props.foto, (_, i) => i==0?"block":"none"))
+                return
             }
-        })
-        return ani
-    })
+            const nuovoTurno = turno.map((item, i) => item=="block"?"none":turno[i-1]=="block"?"block":"none")
+            setTurno(nuovoTurno)
+        }, props.timeout)
+    }, [turno])
 
-    return (
+    return(
         <>
-            {props.data.map((item, i)=>{
-                <animated.img src={item} style={{position:"absolute",...imgAnis[i]}} />
-            })}
+            {
+                props.foto.map((img, i) => <img src={img} width={"100%"} style={{display: turno[i], position:"relative", bottom: "16rem"}}/>)
+            }
         </>
     )
 }

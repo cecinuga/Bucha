@@ -10,3 +10,5 @@
     width:5rem!important;
     height:5rem!important;
 }
+
+.gray-hover:hover{background: rgb(64, 63, 63);}
