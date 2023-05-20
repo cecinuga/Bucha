@@ -13,6 +13,13 @@ import img1 from "../assets/DSC03456.jpg"
 import img2 from "../assets/DSC03440.jpg"
 import img3 from "../assets/DSC03443.jpg"
 import img4 from "../assets/DSC03445.jpg"
+import img9 from "../assets/DSC03484.jpg"
+import img10 from "../assets/DSC03497.jpg"
+import img11 from "../assets/DSC03453.jpg"
+import img12 from "../assets/DSC03456.jpg"
+import img13 from "../assets/DSC03495.jpg"
+import img14 from "../assets/DSC03469.jpg"
+import img15 from "../assets/DSC03440.jpg"
 import FotoAScatto from "./FotoAScatto";
 
 export default function OperaPage(){
@@ -20,9 +27,15 @@ export default function OperaPage(){
     const theme = useMantineTheme()
 
     return(
-        <Parallax pages={7} style={{top: "0", left: "0", background: "linear-gradient(45deg, white 0%, black 100%)"}}>
+        <Parallax pages={xs?5:9} style={{top: "0", left: "0", background: "linear-gradient(45deg, white 0%, black 100%)"}}>
             <ParallaxFotos />
-            <ParallaxLayer offset={1.5} speed={0}>
+            <ParallaxLayer offset={xs?0.5:0.99} factor={xs?0.5:1} speed={0.75}>
+                <img style={{border:xs?"10px solid #c21839":"10px solid white"}} width={xs?"100%":"50%"} height={xs?"50%":"90%"} src={img3}></img>
+            </ParallaxLayer>
+            <ParallaxLayer offset={xs?0.75:0.99} style={{textAlign:"right"}} factor={xs?0.5:1} speed={1}>
+                <img style={{border:xs?"10px solid white":"10px solid #c21839"}} width={xs?"100%":"50%"} height={xs?"50%":"90%"} src={img4}></img>
+            </ParallaxLayer>
+            <ParallaxLayer offset={xs?0.99:1.6} speed={xs?0.5:1}>
                 <Group position="center"> 
                     <Title variant="gradient" gradient={{from:"#3d3c3c", to:"#460411"}} style={{borderBottom:"4px solid black"}} fz={xs?50:100} fw={200} className="font-primary">Bucha 2023</Title>
                 </Group>
@@ -41,14 +54,14 @@ export default function OperaPage(){
                 </Group>
             </ParallaxLayer>
 
-            <ParallaxLayer offset={2} factor={1}>
-                <FotoAScatto foto={[img1,img2,img3,img4]} timeout={500} />
+            <ParallaxLayer offset={xs?1.7:2.3} factor={1}>
+                <FotoAScatto foto={[img15,img14,img13,img11,img10, img12,img9]} timeout={800} />
             </ParallaxLayer>
 
 
             <OperaLayerSection
-                factor={xs?1.7:0.95}
-                offset={3} 
+                factor={xs?1.9:1.75}
+                offset={xs?1.99:3} 
                 speed={1}
                 title="Lorem Ipsum Dolor Sit Amet"
                 bgs={["#f5234d","#c21839", "#771024","#420a15"]}
@@ -62,15 +75,15 @@ export default function OperaPage(){
             />
             <OperaLayer
                 bg="#c21839" 
-                offset={xs?3.45:3.90} factor={0.5} speed={1.5}
+                offset={xs?2.55:3.9} factor={0.5} speed={0}
                 title={<Title fz={xs?40:50} fw={200} align={xs?"center":"unset"} c="white" mb={xs?5:30} className="font-third">Lorem Ipsum Dolor Sit Amet</Title>}
                 desc={<Text c="white" align="center" fz={xs?15:25} style={{textAlign:"justify",width:xs?"100%":"60%",lineHeight: "2.3rem", letterSpacing: "0.2rem"}} className="font-four" >
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu mi ex. Quisque et turpis bibendum, condimentum mi ac, aliquam justo.<br /> Etiam quis magna risus. Aliquam vitae risus laoreet purus malesuada<br /> 
                       </Text>}
             />
             <OperaLayerSection
-                factor={0.95}
-                offset={xs?5:4} 
+                factor={xs?0.3:1.45}
+                offset={xs?3:5} 
                 speed={0.6}
                 title="Lorem Ipsum Dolor Sit Amet"
             >
@@ -78,14 +91,14 @@ export default function OperaPage(){
             </OperaLayerSection>
             <OperaLayer
                 bg="#771024" 
-                offset={xs?5.45:4.90} factor={0.5} speed={1}
+                offset={xs?3.2:5.90} factor={0.5} speed={0}
                 title={<Title fz={xs?40:50} fw={200} align={xs?"center":"unset"} c="white" mb={xs?5:30} className="font-third">Lorem Ipsum Dolor Sit Amet</Title>}
                 desc={<Text c="white" align="center" fz={xs?15:25} style={{textAlign:"justify",width:xs?"100%":"60%",lineHeight: "2.3rem", letterSpacing: "0.2rem"}} className="font-four" >
                     Vestibulum justo massa, tempor non efficitur facilisis, aliquam aliquet est. Vivamus gravida auctor est sed pulvinar.<br /> Sed pharetra justo lobortis ante venenatis commodo.<br /> Class aptent taciti sociosqu ad litora torquent per conubia nostra                     </Text>}
             />
             <OperaLayerSection
-                factor={xs?1.7:0.95}
-                offset={xs?6:5} 
+                factor={xs?0.6:1.45}
+                offset={xs?3.99:7} 
                 speed={0.6}
                 title="Lorem Ipsum Dolor Sit Amet"
             >
@@ -95,7 +108,7 @@ export default function OperaPage(){
             </OperaLayerSection>
             <OperaLayer
                 bg="#420a15" 
-                offset={xs?6.45:5.90} factor={0.5} speed={1}
+                offset={xs?4:7.90} factor={0.5} speed={0}
                 title={<Title fz={xs?40:50} fw={200} align={xs?"center":"unset"} c="white" mb={xs?5:30} className="font-third">Lorem Ipsum Dolor Sit Amet</Title>}
                 desc={<Text c="white" align="center" fz={xs?15:25} style={{textAlign:"justify",width:xs?"100%":"60%",lineHeight: "2.3rem", letterSpacing: "0.2rem"}} className="font-four" >
                     Vestibulum justo massa, tempor non efficitur facilisis, aliquam aliquet est. Vivamus gravida auctor est sed pulvinar.<br /> Sed pharetra justo lobortis ante venenatis commodo.<br /> Class aptent taciti sociosqu ad litora torquent per conubia nostra                     </Text>}

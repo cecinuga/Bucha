@@ -2,6 +2,7 @@ import './divider-waves.css'
 
 type DividerWavesProps = {
     width: string;
+    colors: string[]
 }
 
 export default function DividerWaves(props: DividerWavesProps){
@@ -25,16 +26,16 @@ export default function DividerWaves(props: DividerWavesProps){
                             v44h-352z" />
                     </defs>
                     <g style={{width:"100%", height:"100%",animation:"move-forever1 15s linear infinite"}}>
-                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="3" fill="#a31c43"/>
+                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="3" fill={props.colors[0]}/>
                     </g>
                     <g style={{width:"100%", height:"100%",animation:"move-forever2 13s linear infinite"}}>
-                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="0" fill="#a1132e"/>
+                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="0" fill={props.colors[1]}/>
                     </g>
                     <g style={{width:"100%", height:"100%",animation:"move-forever3 11s linear infinite"}}>
-                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="9" fill="#771024"/>
+                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="9" fill={props.colors[2]}/>
                     </g>
                     <g style={{width:"100%", height:"100%",animation:"move-forever4 9s linear infinite"}}>
-                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="6" fill="#fff"/>  
+                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="6" fill={props.colors[3]}/>  
                     </g>
                 </svg>
                 <svg
@@ -54,16 +55,16 @@ export default function DividerWaves(props: DividerWavesProps){
                             v44h-352z" />
                     </defs>
                     <g style={{width:"100%", height:"100%",animation:"move-forever1 15s linear infinite"}}>
-                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="3" fill="#a31c43"/>
+                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="3" fill={props.colors[0]}/>
                     </g>
                     <g style={{width:"100%", height:"100%",animation:"move-forever2 13s linear infinite"}}>
-                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="0" fill="#a1132e"/>
+                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="0" fill={props.colors[1]}/>
                     </g>
                     <g style={{width:"100%", height:"100%",animation:"move-forever3 11s linear infinite"}}>
-                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="9" fill="#771024"/>
+                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="9" fill={props.colors[2]}/>
                     </g>
                     <g style={{width:"100%", height:"100%",animation:"move-forever4 9s linear infinite"}}>
-                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="6" fill="#fff"/>  
+                        <use xlinkHref="#gentle-wave" style={{animationDelay:"2s"}} x="50" y="6" fill={props.colors[3]}/>  
                     </g>
                 </svg>
     

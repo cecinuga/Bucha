@@ -10,7 +10,6 @@ export default function Sfondo(){
                 <OrbitControls />
                 <Environment 
                     background
-                    blur={0.0}
                     files={sfondo}
                 />
             </Canvas>

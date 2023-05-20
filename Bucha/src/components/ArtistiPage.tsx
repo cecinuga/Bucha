@@ -16,10 +16,10 @@ export default function ArtistiPage(){
     const xs = useMediaQuery("(max-width:500px)")
 
     return(
-        <>
-            <Parallax enabled pages={6} style={{top: "0", left: "0", background: "linear-gradient(180deg, rgba(187,61,61,1) 20%, rgba(82,9,25,1) 90%)"}}>
+        <div>
+            <Parallax enabled pages={xs?6:5} style={{top: "0", left: "0", background: "linear-gradient(180deg, rgba(187,61,61,1) 20%, rgba(82,9,25,1) 90%)"}}>
                 <ParallaxWallpaper />
-                <ParallaxLayer factor={0.1} offset={xs?0.55:1} speed={1}>
+                <ParallaxLayer factor={0.1} offset={xs?0.6:0.99} speed={0.1}>
                     <Group position="center">
                         <Title fz={xs?50:75} pt={5} mb={5} className="font-primary" fw={200} style={{borderBottom:"2px solid white"}} c="white">Bucha 2022</Title>
                     </Group>
@@ -28,7 +28,7 @@ export default function ArtistiPage(){
                         <Link to="/" style={{textDecoration:"none"}}>
                             <Title fz={25} mb={50} mt={10} className="font-primary" fw={200} style={{borderBottom:"2px solid white"}} c="white">Torna alla Home</Title>
                         </Link>
-                        {!xs?<div style={{width:"0.2rem", height:"5rem", backgroundColor:"white", position:"relative", bottom:"0.8rem"}}></div>:<hr />}
+                        {!xs?<div style={{width:"0.2rem", height:"5rem", backgroundColor:"white", position:"relative", bottom:"0.8rem"}}></div>:<></>}
                         <Link to="/l-opera" style={{textDecoration: "none"}}>
                             <Title fz={25} fw={200} mb={50} mt={10} c="white" className="font-primary" style={{borderBottom:"2px solid white"}}>
                                 Vai dall' Opera
@@ -36,12 +36,12 @@ export default function ArtistiPage(){
                         </Link>
                     </Group>
                 </ParallaxLayer>
-                <ParallaxLayer factor={1} offset={xs?1.5:2} speed={0.5}>
+                <ParallaxLayer factor={0.1} offset={xs?0.99:1.1} speed={1}>
                     <Group position="center">
-                        <DividerWaves width="100%" />
+                        <DividerWaves colors={["#ac3b52", "#620e34", "#410d25", "#fff"]} width="100%" />
                     </Group>
                 </ParallaxLayer>
-                <ParallaxLayer factor={xs?2.5:1} style={{paddingTop:"3.5%"}} offset={xs?1.50:2} speed={1.2}>
+                <ParallaxLayer factor={0.1} offset={xs?1:1.2} speed={1.25}>
                     <Group position="center">
                         <SchedaPersonaggio img={katarina} width={"80%"} title={<>
                             <Title className="font-third" fw={200} order={1} style={{fontSize:"4rem"}} c="white">Katarina V</Title>
@@ -66,12 +66,12 @@ export default function ArtistiPage(){
                         </SchedaPersonaggio>
                     </Group>
                 </ParallaxLayer>
-                <ParallaxLayer factor={3} offset={3} speed={0.5}>
+                <ParallaxLayer factor={0.1} offset={xs?2.45:2} speed={0}>
                     <Group position="center">
-                        <DividerWaves width="100%" />
+                        <DividerWaves colors={["#b4144a", "#ac3b52", "#cc4762", "#fff"]} width="100%" />
                     </Group>
                 </ParallaxLayer>
-                <ParallaxLayer factor={xs?2.5:1} style={{paddingTop:"3.5%"}} offset={3} speed={1}>
+                <ParallaxLayer factor={0.1} offset={xs?2.8:2.3} speed={1}>
                     <Group position="center">
                         <SchedaPersonaggio img={lorenzodandrea} width={"80%"} title={<>
                             <Title className="font-third" fw={200} order={1} style={{fontSize:"4rem"}} c="white">Lorenzo D'Andrea</Title>
@@ -95,12 +95,12 @@ export default function ArtistiPage(){
                         </SchedaPersonaggio>
                     </Group>
                 </ParallaxLayer>
-                <ParallaxLayer factor={0.3} offset={xs?5:4} speed={0.5}>
+                <ParallaxLayer factor={0.1} offset={xs?3.9:3.35} speed={0}>
                     <Group position="center">
-                        <DividerWaves width="100%" />
+                        <DividerWaves colors={["#754119", "#a65c24", "#d05e08", "#fff"]} width="100%" />
                     </Group>
                 </ParallaxLayer>
-                <ParallaxLayer factor={xs?2.5:1} style={{paddingTop:"3.5%"}} offset={xs?5:4} speed={1.8}>
+                <ParallaxLayer factor={0.1} offset={xs?4:3.9} speed={1}>
                     <Group position="center" >
                         <SchedaPersonaggio img={vincenzonobile} width={"80%"} title={<>
                             <Title className="font-third" fw={200} order={1} style={{fontSize:"4rem"}} c="white">Vincenzo Nobile</Title>
@@ -124,12 +124,8 @@ export default function ArtistiPage(){
                         </SchedaPersonaggio>
                     </Group>
                 </ParallaxLayer>
-                <ParallaxLayer factor={1} offset={xs?5:4.9} speed={0.5}>
-                    <Group style={{position:"absolute", bottom:0, width:"100%"}}>
-                        <DividerWaves width="100%" />
-                    </Group>
-                </ParallaxLayer>
             </Parallax>
-        </>
+            <div style={{position:"fixed",bottom:"0",transform:"translateY(50%)", width:"100%"}}><DividerWaves colors={["#a31c43", "#a1132e", "#771024", "#fff"]} width="100%" /></div>
+        </div>
      )
 }
