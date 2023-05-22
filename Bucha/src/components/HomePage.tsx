@@ -16,7 +16,7 @@ export default function HomePage(props: HomePageProps){
 
     return(
         <>
-            <Suspense fallback={<VideoPlayer style={{position:"absolute", zIndex:-1, left:"50%", top:"50%", transform:"translateX(-50%) translateY(-65%)"}} video={blood} width={xs?"100%":"50%"} height={'100%'}/>}>
+            <Suspense fallback={<VideoPlayer style={{position:"absolute", zIndex:-1, left:"50%", top:"50%", transform:"translateX(-50%) translateY(-65%)"}} video={blood} width={xs?"100wh":"100wh"} height={'100vh'}/>}>
                 <Sfondo/>
             </Suspense>
             <LandingPage />
