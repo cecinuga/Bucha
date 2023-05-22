@@ -16,15 +16,10 @@ export default function HomePage(props: HomePageProps){
 
     return(
         <>
-            <VideoPlayer style={{position:"absolute", zIndex:-1, left:"50%", top:"50%", transform:"translateX(-50%) translateY(-65%)"}} video={blood} width={xs?"100%":"50%"} height={'100%'}/>
-            {props.isLoading[0]?<VideoTransitioner setIsLoading={props.isLoading[1]}/>:
-                <>
-                <Suspense fallback={null}>
-                    <Sfondo/>
-                </Suspense>
-                <LandingPage />
-                </>
-            }
+            <Suspense fallback={<VideoPlayer style={{position:"absolute", zIndex:-1, left:"50%", top:"50%", transform:"translateX(-50%) translateY(-65%)"}} video={blood} width={xs?"100%":"50%"} height={'100%'}/>}>
+                <Sfondo/>
+            </Suspense>
+            <LandingPage />
         </>
     )
 }
