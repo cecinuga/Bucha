@@ -3,7 +3,6 @@ import img1 from "../assets/DSC03456.jpg"
 import img2 from "../assets/DSC03495.jpg"
 import img3 from "../assets/DSC03469.jpg"
 import img4 from "../assets/DSC03484.jpg"
-import img5 from "../assets/sfondoopera.jpg"
 import useMediaQuery from "@mui/material/useMediaQuery/useMediaQuery";
 import { animated } from '@react-spring/web'
 

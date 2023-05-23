@@ -31,7 +31,7 @@ export default function ArtistiPage(){
                         {!xs?<div style={{width:"0.2rem", height:"5rem", backgroundColor:"white", position:"relative", bottom:"0.8rem"}}></div>:<></>}
                         <Link to="/l-opera" style={{textDecoration: "none"}}>
                             <Title fz={25} fw={200} mb={50} mt={10} c="white" className="font-primary" style={{borderBottom:"2px solid white"}}>
-                                Vai dall' Opera
+                                Vai all' Opera
                             </Title>
                         </Link>
                     </Group>

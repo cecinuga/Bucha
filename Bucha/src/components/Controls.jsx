@@ -3,7 +3,7 @@ import { angleToRadians } from "../lib/lib";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect } from "react";
 
-export default function Controls({pointer}){
+export default function Controls(){
 
     return(
         <OrbitControls enableZoom={false} target={[0,1.5,0]} maxPolarAngle={angleToRadians(110)} minPolarAngle={angleToRadians(60)} zoom={false} maxZoom={0}/>
