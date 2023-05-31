@@ -15,7 +15,7 @@ type SchedaPersonaggio = {
     description: string | ReactElement;
     imgProfile: string;
     citazione:string;
-    children: ReactElement
+    children?: ReactElement
     data: string[]
 }
 
@@ -59,7 +59,7 @@ export default function SchedaPersonaggio(props: SchedaPersonaggio){
                 {props.position=="left"?
                 <>
                     <Text>
-                        {renderImg(props.children)}
+                        {renderImg(props.children!)}
                     </Text>
                     <Text>
                         {renderDesc()}
@@ -68,7 +68,7 @@ export default function SchedaPersonaggio(props: SchedaPersonaggio){
                     sm?
                         <>
                             <Text>
-                                {renderImg(props.children)}
+                                {renderImg(props.children!)}
                             </Text>
                             <Text>
                                 {renderDesc()}
@@ -79,7 +79,7 @@ export default function SchedaPersonaggio(props: SchedaPersonaggio){
                                 {renderDesc()}
                             </Text>
                             <Text>
-                                {renderImg(props.children)}
+                                {renderImg(props.children!)}
                             </Text>
                         </>
                 }

@@ -57,13 +57,7 @@ export default function ArtistiPage(){
                             <Text className="font-primary" fw={200} pt={20}>L'Artista vuole mandare un messaggio: <Text className="font-secondary" style={{ letterSpacing: "0.3rem", lineHeight: "2rem" }}>Un monito agl' Umani, affinche abbiano attenzione nel conservare e nel rispettare la natura e tutti gli esseri viventi</Text></Text>
                         </Text>}
                         imgProfile={katarina} 
-                        citazione={"Giovane Scultrice, cittadina d'Europa."} data={[katarinascultura, katarinascultura1, katarinascultura2]}>
-                            <>
-                                <Group position="center">
-                                    <Text className="font-primary" fw={200}><a target="_blank" style={{textDecoration:"none"}} href={"https://www.katarina-v.com/en/"}><Button variant="gradient" gradient={{from:"white", to:"red"}} px={100}>Sito Artista</Button></a></Text>
-                                </Group>
-                            </>
-                        </SchedaPersonaggio>
+                        citazione={"Giovane Scultrice, cittadina d'Europa."} data={[katarinascultura, katarinascultura1, katarinascultura2]} />
                     </Group>
                 </ParallaxLayer>
                 <ParallaxLayer factor={0.1} offset={xs?2.45:2} speed={0}>
@@ -86,13 +80,7 @@ export default function ArtistiPage(){
                             <Text className="font-primary" fw={200} pt={20}>L'Artista vuole mandare un messaggio: <Text className="font-secondary" style={{ letterSpacing: "0.3rem", lineHeight: "2rem" }}>Un monito agl' Umani, affinche abbiano attenzione nel conservare e nel rispettare la natura e tutti gli esseri viventi</Text></Text>
                         </Text>}
                         imgProfile={katarina} 
-                        citazione={"La nuova Guernica del terzo millennio."} data={[katarinascultura, katarinascultura1, katarinascultura2]}>
-                            <>
-                                <Group position="center">
-                                    <Text className="font-primary" fw={200}><a target="_blank" style={{textDecoration:"none"}} href={"https://www.katarina-v.com/en/"}><Button variant="gradient" gradient={{from:"white", to:"red"}} px={100}>Sito Artista</Button></a></Text>
-                                </Group>
-                            </>
-                        </SchedaPersonaggio>
+                        citazione={"La nuova Guernica del terzo millennio."} data={[katarinascultura, katarinascultura1, katarinascultura2]} />
                     </Group>
                 </ParallaxLayer>
                 <ParallaxLayer factor={0.1} offset={xs?3.9:3.35} speed={0}>
@@ -115,13 +103,7 @@ export default function ArtistiPage(){
                             <Text className="font-primary" fw={200} pt={20}>L'Artista vuole mandare un messaggio: <Text className="font-secondary" style={{ letterSpacing: "0.3rem", lineHeight: "2rem" }}>Un monito agl' Umani, affinche abbiano attenzione nel conservare e nel rispettare la natura e tutti gli esseri viventi</Text></Text>
                         </Text>}
                         imgProfile={katarina} 
-                        citazione={"La nuova Guernica del terzo millennio."} data={[katarinascultura, katarinascultura1, katarinascultura2]}>
-                            <>
-                                <Group position="center">
-                                    <Text className="font-primary" fw={200}><a target="_blank" style={{textDecoration:"none"}} href={"https://www.katarina-v.com/en/"}><Button variant="gradient" gradient={{from:"white", to:"red"}} px={100}>Sito Artista</Button></a></Text>
-                                </Group>
-                            </>
-                        </SchedaPersonaggio>
+                        citazione={"La nuova Guernica del terzo millennio."} data={[katarinascultura, katarinascultura1, katarinascultura2]}/>
                     </Group>
                 </ParallaxLayer>
             </Parallax>
