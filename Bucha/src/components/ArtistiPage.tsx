@@ -1,4 +1,4 @@
-import { Button, Group, Text, Title } from "@mantine/core";
+import { Group, Text, Title } from "@mantine/core";
 import SchedaPersonaggio from "./SchedaPersonaggio";
 import katarina from "../assets/katarina_v.jpg"
 import lorenzodandrea from "../assets/lorenzo_dandrea.jpg"

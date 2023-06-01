@@ -6,15 +6,16 @@ import {BsFire} from "react-icons/bs"
 import DividerWaves from "./DividerWaves";
 import SingleDividerWaves from "./SingleDividerWaves";
 import Step1 from "./Step1";
+import bg from '../assets/DSC03422.jpg'
 
 export default function CompraPage(){
     const [active, setActive] = useState(0);
     
     return(
-        <Parallax pages={2} style={{position:"absolute", top:"0", left:"0"}} horizontal>
-            <ParallaxLayer factor={0.5} offset={0} speed={0} horizontal>
+        <Parallax pages={1} style={{position:"absolute", top:"0", left:"0"}} horizontal>
+            <ParallaxLayer factor={0.5} offset={0} speed={0} horizontal style={{background: "url("+bg+")"}}>
                 <Stack style={{position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)"}}>
-                    <Title className="font-primary" fz={50} fw={200} variant="gradient" gradient={{from:"#260101", to:"#2d2626"}}>Diventa <Text className="font-third" fz={60} variant="gradient" gradient={{from:"green", to:"green"}} fw={400}>Anche Tu</Text> CoProprietario dell'Opera</Title>
+                    <Title className="font-primary" fz={50} fw={200} variant="gradient" gradient={{from:"white", to:"gray"}}>Diventa <Text className="font-third" fz={60} variant="gradient" gradient={{from:"green", to:"green"}} fw={800}>Anche Tu</Text> CoProprietario dell'Opera</Title>
                 </Stack>
             </ParallaxLayer>
             <ParallaxLayer factor={0.5} offset={0.5} speed={1.5} horizontal style={{border:"2px solid rgba(147,117,117,0.5)", background: "radial-gradient(circle, rgba(210,92,100,1) 0%, rgba(242,54,44,1) 100%)"}}>
